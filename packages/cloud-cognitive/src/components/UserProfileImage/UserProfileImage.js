@@ -130,8 +130,6 @@ UserProfileImage.propTypes = {
    * https://pages.github.ibm.com/cdai-design/pal/patterns/user-profile-images/
    */
   backgroundColor: PropTypes.oneOf([
-    'light-blue',
-    'dark-blue',
     'light-cyan',
     'dark-cyan',
     'light-gray',
