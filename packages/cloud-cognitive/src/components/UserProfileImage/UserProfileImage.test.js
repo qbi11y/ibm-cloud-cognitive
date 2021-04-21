@@ -48,11 +48,11 @@ describe(name, () => {
   });
 
   test('should return appropriately size circle based on size prop', () => {
-    const { container } = render(<UserProfileImage theme="light" size="xl" />);
+    const { container } = render(<UserProfileImage theme="light" size="xlg" />);
     const element = container.querySelector(
       `.${pkg.prefix}-user-profile-avatar`
     );
-    const hasSizeClass = element.className.includes('xl');
+    const hasSizeClass = element.className.includes('xlg');
     expect(hasSizeClass).toBeTruthy();
   });
 

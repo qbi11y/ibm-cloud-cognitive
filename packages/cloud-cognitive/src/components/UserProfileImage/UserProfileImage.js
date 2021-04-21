@@ -39,9 +39,10 @@ export let UserProfileImage = React.forwardRef(
     {
       backgroundColor,
       className,
-      icon,
+      kind,
       initials,
       image,
+      imageDescription,
       size,
       theme,
       // Collect any other property values passed in.
@@ -81,14 +82,14 @@ export let UserProfileImage = React.forwardRef(
     const FillItem = image
       ? () => (
           <img
-            alt=""
+            alt={imageDescription}
             src={image}
-            className={`${blockClass}-photo ${blockClass}-photo--${size}`}
+            className={`${blockClass}__photo`}
           />
         )
       : initials
       ? formatInitials
-      : icons[icon][size];
+      : icons[kind][size];
 
     return (
       <div
@@ -115,8 +116,8 @@ UserProfileImage = pkg.checkComponentEnabled(UserProfileImage, componentName);
 
 UserProfileImage.displayName = componentName;
 UserProfileImage.defaultProps = {
-  icon: 'user',
-  size: 'xl',
+  kind: 'user',
+  size: 'xlg',
 };
 UserProfileImage.propTypes = {
   /**
@@ -150,13 +151,17 @@ UserProfileImage.propTypes = {
    */
   image: PropTypes.string,
   /**
+   * If passing an image, the imageDescripton is used on the 'alt' attributes
+   */
+  imageDescription: PropTypes.string,
+  /**
    * When passing the initials prop, either send the initials to be used or the user's display name. The first two capital letters of the display name will be used as the initials.
    */
   initials: PropTypes.string,
   /**
    * Set the size of the avatar circle
    */
-  size: PropTypes.oneOf(['xl', 'lg', 'md', 'sm', 'xs']),
+  size: PropTypes.oneOf(['xlg', 'lg', 'md', 'sm', 'xs']),
   /**
    * Set theme in which the component will be rendered
    */

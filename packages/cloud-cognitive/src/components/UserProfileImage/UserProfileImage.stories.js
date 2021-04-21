@@ -31,7 +31,7 @@ export default {
         options: ['light', 'dark'],
       },
     },
-    icon: {
+    kind: {
       control: {
         type: 'radio',
         options: ['user', 'group'],
@@ -40,7 +40,7 @@ export default {
     size: {
       control: {
         type: 'radio',
-        options: ['xl', 'lg', 'md', 'sm', 'xs'],
+        options: ['xlg', 'lg', 'md', 'sm', 'xs'],
       },
     },
   },
@@ -64,7 +64,7 @@ export const WithGroupIcon = Template.bind({});
 WithGroupIcon.args = {
   backgroundColor: 'light-cyan',
   theme: 'light',
-  icon: 'group',
+  kind: 'group',
 };
 
 export const WithInitials = Template.bind({});
@@ -79,4 +79,5 @@ WithImage.args = {
   backgroundColor: 'light-cyan',
   theme: 'light',
   image,
+  imageDescription: 'Image description for alt attribute',
 };
